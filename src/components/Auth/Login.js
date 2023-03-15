@@ -17,7 +17,7 @@ const Login = () => {
     if (localStorage.getItem("auth_token")) {
       navigate("/profile")
     }
-  }, [])
+  }, [navigate])
 
   const handleLogin = async (e) => {
     // to stop refresh on submit
