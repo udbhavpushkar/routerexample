@@ -14,7 +14,7 @@ const Profile = () => {
     if (!localStorage.getItem("auth_token")) {
       navigate("/login")
     }
-  }, [])
+  }, [navigate])
 
   return (
     <div>
