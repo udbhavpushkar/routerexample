@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import About from "./components/About"
+import Company from "./components/Company"
+import Home from "./components/Home"
+import Layout from "./components/Layout"
+import Error from "./components/Error"
+import Login from "./components/Auth/Login"
+import Policy from "./components/Auth/Policy"
+import Profile from "./components/Auth/Profile"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="App">
+        <div>
+          <div>
+            <Link to="/login">Login</Link>
+            <Link to="/profile">Profile</Link>
+            <Link to="/policy">Policy</Link>
+          </div>
+        </div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/policy" element={<Policy />} />
+        </Routes>
+
+        {/* <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="/about" element={<About />}></Route>
+            <Route path="/company" element={<Company />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="*" element={<Error />}></Route>
+          </Route>
+        </Routes> */}
+
+        {/* <Switch>
+          <Route exact path="/user">
+            <UserList/>
+          </Route>
+          <Route path="/user/create">
+            <UserCreate/>
+          </Route>
+          
+        </Switch> */}
+      </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
