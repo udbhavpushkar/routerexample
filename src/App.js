@@ -1,26 +1,36 @@
 import "./App.css"
+import React, { Suspense } from "react"
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
-import Login from "./components/Auth/Login"
+// import Login from "./components/Auth/Login"
 import Policy from "./components/Auth/Policy"
 import Profile from "./components/Auth/Profile"
+import Calculator from "./components/Calculator"
+// const Policy = React.lazy(() => import("./components/Auth/Policy"))
+const Login = React.lazy(() => import("./components/Auth/Login"))
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <div>
+        <Calculator />
+
+        {/* <div>
           <div>
             <Link to="/login">Login</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/policy">Policy</Link>
           </div>
-        </div>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/policy" element={<Policy />} />
-        </Routes>
+        </div> */}
+
+        {/* <Suspense fallback={<div>loading....</div>}>
+          <Policy />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/policy" element={<Policy />} />
+          </Routes>
+        </Suspense> */}
 
         {/* <Routes>
           <Route path="/" element={<Layout />}>
