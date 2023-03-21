@@ -5,6 +5,12 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
 import Policy from "./components/Auth/Policy"
 import Profile from "./components/Auth/Profile"
 import Calculator from "./components/Calculator"
+import Score from "./components/Score"
+import ScoreNew from "./components/ScoreNew"
+import CallbackEx from "./components/CallbackEx"
+import Schedule from "./components/Schedule"
+import About from "./components/About"
+import Todo from "./components/Todo"
 // const Policy = React.lazy(() => import("./components/Auth/Policy"))
 const Login = React.lazy(() => import("./components/Auth/Login"))
 
@@ -12,8 +18,13 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Calculator />
-
+        {/* <CallbackEx /> */}
+        {/* <Schedule /> */}
+        {/* <About /> */}
+        <Todo />
+        {/* <Calculator vivek={"Newton"} /> */}
+        {/* <Score /> */}
+        {/* <ScoreNew /> */}
         {/* <div>
           <div>
             <Link to="/login">Login</Link>

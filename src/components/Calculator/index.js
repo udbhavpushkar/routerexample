@@ -4,7 +4,6 @@ const Calculator = () => {
   const [num, setNum] = useState(3)
 
   const handleSquare = () => {
-    debugger
     let x = num
     x = x + 4
     setNum(x * x)
